@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsInsight AI - Smart News Summarization</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">NewsInsight AI</div>
+        <div class="nav-menu">
+            <button id="preferencesBtn">Preferences</button>
+            <button id="savedArticlesBtn">Saved Articles</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="preferences" class="preferences-modal hidden">
+            <div class="modal-content">
+                <h2>News Preferences</h2>
+                <div class="preferences-form">
+                    <div class="preference-group">
+                        <h3>Categories</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="technology"> Technology</label>
+                            <label><input type="checkbox" value="business"> Business</label>
+                            <label><input type="checkbox" value="science"> Science</label>
+                            <label><input type="checkbox" value="health"> Health</label>
+                        </div>
+                    </div>
+                    <div class="preference-group">
+                        <h3>Update Frequency</h3>
+                        <select id="frequency">
+                            <option value="realtime">Real-time</option>
+                            <option value="daily">Daily Digest</option>
+                            <option value="weekly">Weekly Roundup</option>
+                        </select>
+                    </div>
+                    <button id="savePreferences">Save Preferences</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-feed">
+            <div class="feed-filters">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                </div>
+                <div class="sentiment-filter">
+                    <select id="sentimentFilter">
+                        <option value="all">All Sentiments</option>
+                        <option value="positive">Positive</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="negative">Negative</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="articlesFeed" class="articles-container">
+                <!-- Articles will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

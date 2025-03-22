@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsInsight AI - Smart News Summarization</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">NewsInsight AI</div>
+        <div class="nav-menu">
+            <div id="authButtons">
+                <button id="loginBtn">Login</button>
+                <button id="signupBtn">Sign Up</button>
+            </div>
+            <div id="userMenu" class="hidden">
+                <button id="preferencesBtn">Preferences</button>
+                <button id="savedArticlesBtn">Saved Articles</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Auth Modals -->
+        <section id="loginModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="signupModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupUsername">Username</label>
+                        <input type="text" id="signupUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="preferences" class="modal hidden">
+            <div class="modal-content">
+                <h2>News Preferences</h2>
+                <div class="preferences-form">
+                    <div class="preference-group">
+                        <h3>Categories</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="technology"> Technology</label>
+                            <label><input type="checkbox" value="business"> Business</label>
+                            <label><input type="checkbox" value="science"> Science</label>
+                            <label><input type="checkbox" value="health"> Health</label>
+                        </div>
+                    </div>
+                    <div class="preference-group">
+                        <h3>Update Frequency</h3>
+                        <select id="frequency">
+                            <option value="realtime">Real-time</option>
+                            <option value="daily">Daily Digest</option>
+                            <option value="weekly">Weekly Roundup</option>
+                        </select>
+                    </div>
+                    <button id="savePreferences">Save Preferences</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-feed">
+            <div class="feed-filters">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                </div>
+                <div class="sentiment-filter">
+                    <select id="sentimentFilter">
+                        <option value="all">All Sentiments</option>
+                        <option value="positive">Positive</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="negative">Negative</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="articlesFeed" class="articles-container">
+                <!-- Articles will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="/main.js"></script>
+</body>
+</html>
